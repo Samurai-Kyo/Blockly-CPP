@@ -21,8 +21,7 @@ Blockly.Blocks['prog_name'] = {
       .setCheck(null)
       .appendField("BEGIN");
     this.appendDummyInput()
-      .appendField("END")
-      .appendField(new Blockly.FieldTextInput("prog_name"), "prog_name");
+      .appendField("END");
     this.setInputsInline(false);
     this.setNextStatement(true, "Routines");
     this.setColour(240);
@@ -31,14 +30,25 @@ Blockly.Blocks['prog_name'] = {
   }
 };
 
-Blockly.JavaScript['prog_name'] = function(block) {
+Blockly.KAREL['prog_name'] = function(block) {
   var text_prog_name = block.getFieldValue('prog_name');
   var statements_translator_directives = Blockly.JavaScript.statementToCode(block, 'translator directives');
   var statements_declarations = Blockly.JavaScript.statementToCode(block, 'declarations');
   var statements_routines = Blockly.JavaScript.statementToCode(block, 'routines');
   var statements_begin = Blockly.JavaScript.statementToCode(block, 'BEGIN');
-  var text_prog_name = block.getFieldValue('prog_name');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  // TODO: Assemble KAREL into code variable.
+  var code = 'PROGRAM ' + text_prog_name + '\n';
+
+  if (statements_translator_directives) {
+    code += statements_translator_directives;
+  }
+  if (statements_declarations) {
+    code += statements_declarations;
+  }
+  if (statements_routines) {
+    code += statements_routines;
+  }
+
+  code += 'BEGIN' + '\n' +statements_begin + '\n' + 'END ' + text_prog_name + '\n';
   return code;
 };
