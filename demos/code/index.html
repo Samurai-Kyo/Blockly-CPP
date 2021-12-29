@@ -40,9 +40,11 @@
         <script src="Blocks/Chapter 7 - Classes.js"></script>
         <script src="Blocks/Chapter 10 - Inheritance.js"></script>
 
+        <script src="Blocks/prog_name.js"></script>
+
         <!-- Include block type inputs -->
       <script src="Blocks/Blocks - Type.js"></script>
-      
+
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/jcubic/jquery.terminal@devel/js/jquery.terminal.min.js"></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.20.2/css/jquery.terminal.min.css">
@@ -55,12 +57,12 @@
             <tr>
                 <td>
                     <h1>
-                        <span id="title">Blockly C++</span>
-                        <!--<span id = "version">Beta 1.7</span>-->
+                        <span id="title">KAREL</span>
+                        <span id = "version">Beta v0.1</span>
                     </h1>
                     <p align="left">
                         <br>
-                        <button onclick="downloadCode()">Download C++ Code</button>
+                        <button onclick="downloadCode()">Download KAREL Code</button>
                         <!-- button onclick="updateLog(this)">Download C++</button -->
                     </p>
 
@@ -73,7 +75,7 @@
                         <button onclick="showFilePopUp('deleteFilePopUp')" title="Delete File">Delete File</button>
                         <button onclick="showFilePopUp('newFilePopUp')" title="New File">New File</button>
                     </p>
-                    <div id="fileDisplayName" style="font-size:150%">Current File: Main.cpp</div>
+                    <div id="fileDisplayName" style="font-size:150%">Current File: prog_name.kl</div>
                 </td>
                 <td class="farSide">
                     <br>
@@ -86,7 +88,7 @@
 
                         <tr id="tabRow" height="1em">
                             <td id="tab_blocks" class="tabon">...</td>
-                            <td id="tab_c" class="taboff">C++</td> <!--Added C++ to the tab-->
+                            <td id="tab_c" class="taboff">KAREL</td> <!--Added C++ to the tab-->
                             <td class="tabmin">&nbsp;</td>
                             <td id="tab_xml" class="taboff"></td>
                             <td class="tabmin">&nbsp;</td>
@@ -96,7 +98,7 @@
                                 <div class="fdropdown">
                                     <button class="filedropdownbutton">Files...</button>
                                     <div id="fileDropDown" class="filedropdown-content">
-                                        <a href="javascript:void(0)" id="Main.cpp_file" onclick="makeFileVisible('Main.cpp')">Main.cpp</a>
+                                        <a href="javascript:void(0)" id="prog_name.kl_file" onclick="makeFileVisible('prog_name.kl')">prog_name.kl</a>
                                     </div>
                                 </div>
                             </td>
@@ -281,7 +283,7 @@
 				<block type="delete_block"></block>
 
             </category>
-			
+
             <category name="Include Directories" colour="#134796">
 
                 <block type="include_iostream"></block>
@@ -1508,7 +1510,7 @@
 
             </category>
             <!-- end of Chapter 6 blocks -->
-			
+
             <!-- Chapter 7                                                               -->
             <!-- Classes 																 -->
             <!--                                                                         -->
@@ -1546,18 +1548,27 @@
             </category>
 
             <!-- end of Chapter 7 blocks -->
-			
+
 			<category name="Chapter 10" colour="#134796">
-			
+
 				<label text="Base / Parent / Superclass" web-class="labelClass"></label>
-				
+
 				<block type="ds_superclass"></block>
-			
+
 				<label text="Derived / Child / Subclass" web-class="labelClass"></label>
-				
+
 				<block type="ds_subclass"></block>
-			
+
 			</category>
+
+
+            <category name="KAREL" colour="#134796">
+
+                <label text="Begin program" web-class="labelClass"></label>
+                <block type="prog_name"></block>
+
+
+            </category>
 
         </xml> <!-- toolbox -->
         <!-- <textarea id="content_xml" class="content" wrap="off"></textarea> -->
