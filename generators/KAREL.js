@@ -76,10 +76,10 @@ Blockly.KAREL = new Blockly.Generator('KAREL');
 
 /**
  * Order of operation ENUMs.
- * https://www.dartlang.org/docs/dart-up-and-runn
+ * See Karel Manual
  */
-// TODO Add Precitence
-Blockly.Lua.ORDER_ATOMIC = 0;              // literals
+// TODO Add Precedence
+Blockly.KAREL.ORDER_ATOMIC = 0;            // literals
 Blockly.KAREL.ORDER_NOT = 1;               // not operation
 Blockly.KAREL.ORDER_SPECIAL = 2;           // :, @, #
 Blockly.KAREL.ORDER_UPPER_ARITHMATIC = 3;  // *, /, AND, DIV, MOD
@@ -92,7 +92,7 @@ Blockly.KAREL.ORDER_NONE = 99;
  * Initialise the database of variable names.
  * @param {!Blockly.Workspace} workspace Workspace to generate code from.
  */
-Blockly.Lua.init = function(workspace) {
+Blockly.KAREL.init = function(workspace) {
 
 
  
